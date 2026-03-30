@@ -265,7 +265,7 @@ client.once("ready", async () => {
 
   client.user.setPresence({
     activities: [{ name: "Guard Sistemi Aktif", type: 3 }],
-    status: "online"
+    status: "dnd"
   });
 });
 
@@ -450,8 +450,8 @@ client.on("messageCreate", async (message) => {
       channelId: message.member.voice.channel.id,
       guildId: message.guild.id,
       adapterCreator: message.guild.voiceAdapterCreator,
-      selfDeaf: false,
-      selfMute: true
+      selfDeaf: true,
+      selfMute: false
     });
 
     return message.reply(`Ses kanalına girdim: **${message.member.voice.channel.name}**`);
